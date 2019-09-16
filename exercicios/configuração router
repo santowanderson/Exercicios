@@ -1,0 +1,177 @@
+RT-1
+
+enable
+configure terminal
+hostname RT-1
+banner motd "APENAS PESSOAS AUTORIZADAS"
+enable secret wandersonenable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+interface gigabitEthernet 0/1
+ip address 192.168.0.1 255.255.224.0
+description REDE-1
+no shutdown
+exit
+interface serial 0/0/1 
+ip address 201.187.89.6 255.255.255.252
+description REDE-2
+no shutdown
+exit
+interface serial 0/1/1
+ip address 201.187.89.21 255.255.255.252
+description REDE-3
+no shutdown
+exit
+interface gigabitEthernet 0/0/0
+ip address 201.187.89.2 255.255.255.252
+description REDE-4
+no shutdown
+exit
+line console 0
+password wandersonconsole
+login
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 10
+login local
+exit
+username wanderson privilege 15 secret 05042000
+username estagiario privilege 1 secret 05042000
+service password-encryption
+do wr
+
+
+RT 2 
+
+enable
+configure terminal
+hostname RT-2
+banner motd "APENAS PESSOAS AUTORIZADAS"
+enable secret wandersonenable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+interface gigabitEthernet 0/1
+ip address 10.0.0.1 255.0.0.0
+description REDE-1
+no shutdown
+exit
+interface serial 0/0/1 
+ip address 201.187.89.5 255.255.255.252
+description REDE-2
+no shutdown
+exit
+interface serial 0/0/0
+ip address 201.187.89.10 255.255.255.252
+description REDE-3
+no shutdown
+exit
+interface gigabitEthernet 0/1/1
+ip address 201.187.89.18 255.255.255.252
+description REDE-4
+no shutdown
+exit
+line console 0
+password wandersonconsole
+login
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 10
+login local
+exit
+username wanderson privilege 15 secret 05042000
+username estagiario privilege 1 secret 05042000
+service password-encryption
+do wr
+
+RT-3
+
+enable
+configure terminal
+hostname RT-3
+banner motd "APENAS PESSOAS AUTORIZADAS"
+enable secret wandersonenable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+interface gigabitEthernet 0/1
+ip address 192.168.32.1 255.255.248.0
+description REDE-1
+no shutdown
+exit
+interface serial 0/1/1 
+ip address 201.187.89.22 255.255.255.252
+description REDE-2
+no shutdown
+exit
+interface serial 0/0/0
+ip address 201.187.89.9 255.255.255.252
+description REDE-3
+no shutdown
+exit
+interface gigabitEthernet 0/0/1
+ip address 201.187.89.13 255.255.255.252
+description REDE-4
+no shutdown
+exit
+line console 0
+password wandersonconsole
+login
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 10
+login local
+exit
+username wanderson privilege 15 secret 05042000
+username estagiario privilege 1 secret 05042000
+service password-encryption
+do wr
+
+
+RT-4
+
+enable
+configure terminal
+hostname RT-4
+banner motd "APENAS PESSOAS AUTORIZADAS"
+enable secret wandersonenable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+interface gigabitEthernet 0/1
+ip address 172.16.0.1 255.240.0.0
+description REDE-1
+no shutdown
+exit
+interface serial 0/0/0 
+ip address 201.187.89.1 255.255.255.252
+description REDE-2
+no shutdown
+exit
+interface serial 0/1/1
+ip address 201.187.89.17 255.255.255.252
+description REDE-3
+no shutdown
+exit
+interface gigabitEthernet 0/0/1
+ip address 201.187.89.14 255.255.255.252
+description REDE-4
+no shutdown
+exit
+line console 0
+password wandersonconsole
+login
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 10
+login local
+exit
+username wanderson privilege 15 secret 05042000
+username estagiario privilege 1 secret 05042000
+service password-encryption
+do wr
