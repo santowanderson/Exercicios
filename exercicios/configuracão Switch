@@ -1,0 +1,99 @@
+Switch 1
+
+
+enable
+configure terminal
+hostname SW-01
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret wandersonenable
+line console 0
+password wandersonconsole
+login
+exit
+line vty 0 15
+password wandersonvty
+login
+exit
+service password-encryption
+interface vlan 1
+ip address 192.168.31.254 255.255.224.0
+description INTERFACE DE GERENCIAMENTO
+no shutdown
+exit
+ip default-gateway 192.168.0.1
+do wr
+
+Switch 2
+
+
+enable
+configure terminal
+hostname SW-02
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret wandersonenable
+line console 0
+password wandersonconsole
+login
+exit
+line vty 0 15
+password wandersonvty
+login
+exit
+service password-encryption
+interface vlan 1
+ip address 10.255.255.254 255.0.0.0
+description INTERFACE DE GERENCIAMENTO
+no shutdown
+exit
+ip default-gateway 10.0.0.1
+do wr
+
+Switch 3
+
+
+enable
+configure terminal
+hostname SW-03
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret wandersonenable
+line console 0
+password wandersonconsole
+login
+exit
+line vty 0 15
+password wandersonvty
+login
+exit
+service password-encryption
+interface vlan 1
+ip address 192.168.38.254 255.255.248.0
+description INTERFACE DE GERENCIAMENTO
+no shutdown
+exit
+ip default-gateway 192.168.32.1
+do wr
+
+Switch 4
+
+
+enable
+configure terminal
+hostname SW-04
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret wandersonenable
+line console 0
+password wandersonconsole
+login
+exit
+line vty 0 15
+password wandersonvty
+login
+exit
+service password-encryption
+interface vlan 1
+ip address 172.32.255.254 255.40.0.0
+description INTERFACE DE GERENCIAMENTO
+no shutdown
+exit
+ip default-gateway 172.16.0.1
+do wr
