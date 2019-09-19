@@ -1,0 +1,180 @@
+Router 1
+
+
+
+enable
+configure terminal
+hostname RT-01
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede1.local
+crypto key generate rsa general-keys modulus 1024
+login block-for 60 attempts 3 within 60
+user name administrador privilege 15 secret SenhaAdmin
+user name estagiario privilege 1 secret SenhaEst
+interface gigabitEthernet 0/1
+ip address 192.168.1.1 255.255.255.224
+description REDE 1
+no shutdown
+line console 0
+login local
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+login block-for 180 attempts 3 within 60
+security passwords min-length 8
+service password-encryption
+exit
+interface serial
+ip address 200.200.100.2 255.255.255.252
+description REDE 2
+no shutdown
+exit
+interface serial
+ip address 200.200.100.6 255.255.255.252
+description REDE 3
+no shutdown
+do wr
+
+
+
+Router 2
+
+
+
+enable
+configure terminal
+hostname RT-02
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede3.local
+crypto key generate rsa general-keys modulus 1024
+login block-for 60 attempts 3 within 60
+user name administrador privilege 15 secret SenhaAdmin
+user name estagiario privilege 1 secret SenhaEst
+interface gigabitEthernet 0/1
+ip address 192.168.0.1 255.255.255.128
+description REDE 1
+no shutdown
+line console 0
+login local
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+login block-for 180 attempts 3 within 60
+security passwords min-length 8
+service password-encryption
+exit
+interface serial
+ip address 200.200.100.5 255.255.255.252
+description REDE 2
+no shutdown
+exit
+interface serial
+ip address 200.200.100.10 255.255.255.252
+description REDE 3
+no shutdown
+do wr
+
+
+Router 3
+
+
+
+enable
+configure terminal
+hostname RT-03
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede4.local
+crypto key generate rsa general-keys modulus 1024
+login block-for 60 attempts 3 within 60
+user name administrador privilege 15 secret SenhaAdmin
+user name estagiario privilege 1 secret SenhaEst
+interface gigabitEthernet 0/1
+ip address 172.16.42.1 255.255.254.0
+description REDE 1
+no shutdown
+line console 0
+login local
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+login block-for 180 attempts 3 within 60
+security passwords min-length 8
+service password-encryption
+
+exit
+interface serial
+ip address 200.200.100.14 255.255.255.252
+description REDE 2
+no shutdown
+exit
+interface serial
+ip address 200.200.100.9 255.255.255.252
+description REDE 3
+no shutdown
+do wr
+
+
+
+
+Router 4
+
+
+
+enable
+configure terminal
+hostname RT-04
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede2.local
+crypto key generate rsa general-keys modulus 1024
+login block-for 60 attempts 3 within 60
+user name administrador privilege 15 secret SenhaAdmin
+user name estagiario privilege 1 secret SenhaEst
+interface gigabitEthernet 0/1
+ip address 10.40.10.1 255.255.240.0
+description REDE 1
+no shutdown
+line console 0
+login local
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+login block-for 180 attempts 3 within 60
+security passwords min-length 8
+service password-encryption
+exit
+interface serial
+ip address 200.200.100.13 255.255.255.252
+description REDE 2
+no shutdown
+exit
+interface serial
+ip address 200.200.100.1 255.255.255.252
+description REDE 3
+no shutdown
+do wr
+
+
+
+
+
+
