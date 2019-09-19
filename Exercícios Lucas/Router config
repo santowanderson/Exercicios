@@ -118,7 +118,6 @@ exit
 login block-for 180 attempts 3 within 60
 security passwords min-length 8
 service password-encryption
-
 exit
 interface serial
 ip address 200.200.100.14 255.255.255.252
