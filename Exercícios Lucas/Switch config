@@ -13,6 +13,8 @@ user name administrador privilege 15 secret SenhaAdmin
 user name estagiario privilege 1 secret SenhaEst
 ip default-gateway 192.168.1.1
 line console 0
+password wandersonconsole
+login
 login local
 exit
 line vty 0 15 
@@ -43,6 +45,8 @@ user name administrador privilege 15 secret SenhaAdmin
 user name estagiario privilege 1 secret SenhaEst
 ip default-gateway 192.168.0.1
 line console 0
+password wandersonconsole
+login
 login local
 exit
 line vty 0 15 
@@ -75,6 +79,8 @@ user name administrador privilege 15 secret SenhaAdmin
 user name estagiario privilege 1 secret SenhaEst
 ip default-gateway 172.16.42.1
 line console 0
+password wandersonconsole
+login
 login local
 exit
 line vty 0 15 
@@ -108,6 +114,8 @@ user name administrador privilege 15 secret SenhaAdmin
 user name estagiario privilege 1 secret SenhaEst
 ip default-gateway 10.40.10.1
 line console 0
+password wandersonconsole
+login
 login local
 exit
 line vty 0 15 
