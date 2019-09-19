@@ -17,7 +17,8 @@ ip address 192.168.1.1 255.255.255.224
 description REDE 1
 no shutdown
 line console 0
-login local
+password SenhadaConsole
+login
 exit
 line vty 0 15 
 password SenhadaVTY
@@ -60,8 +61,9 @@ interface gigabitEthernet 0/1
 ip address 192.168.0.1 255.255.255.128
 description REDE 1
 no shutdown
-line console 0
-login local
+line cosole 0
+password SenhadaConsole
+login
 exit
 line vty 0 15 
 password SenhadaVTY
@@ -104,7 +106,8 @@ ip address 172.16.42.1 255.255.254.0
 description REDE 1
 no shutdown
 line console 0
-login local
+password SenhadaConsole
+login
 exit
 line vty 0 15 
 password SenhadaVTY
@@ -150,7 +153,8 @@ ip address 10.40.10.1 255.255.240.0
 description REDE 1
 no shutdown
 line console 0
-login local
+password SenhadaConsole
+login
 exit
 line vty 0 15 
 password SenhadaVTY
