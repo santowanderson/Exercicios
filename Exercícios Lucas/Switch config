@@ -9,8 +9,8 @@ enable password SenhadaEnable
 banner motd "Apenas pessoas Autorizadas"
 ip domain-name rede1.local
 crypto key generate rsa general-keys modulus 1024
-user name administrador privilege 15 secret SenhaAdmin
-user name estagiario privilege 1 secret SenhaEst
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
 ip default-gateway 192.168.1.1
 line console 0
 password SenhadaConsole
@@ -40,8 +40,8 @@ enable password SenhadaEnable
 banner motd "Apenas pessoas Autorizadas"
 ip domain-name rede3.local
 crypto key generate rsa general-keys modulus 1024
-user name administrador privilege 15 secret SenhaAdmin
-user name estagiario privilege 1 secret SenhaEst
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
 ip default-gateway 192.168.0.1
 line console 0
 password SenhadaConsole
@@ -73,8 +73,8 @@ enable password SenhadaEnable
 banner motd "Apenas pessoas Autorizadas"
 ip domain-name rede4.local
 crypto key generate rsa general-keys modulus 1024
-user name administrador privilege 15 secret SenhaAdmin
-user name estagiario privilege 1 secret SenhaEst
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
 ip default-gateway 172.16.42.1
 line console 0
 password SenhadaConsole
@@ -107,8 +107,8 @@ enable secret SenhadaEnable
 banner motd "Apenas pessoas Autorizadas"
 ip domain-name rede2.local
 crypto key generate rsa general-keys modulus 1024
-user name administrador privilege 15 secret SenhaAdmin
-user name estagiario privilege 1 secret SenhaEst
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
 ip default-gateway 10.40.10.1
 line console 0
 password SenhadaConsole
