@@ -10,8 +10,8 @@ banner motd "Apenas pessoas Autorizadas"
 ip domain-name rede1.local
 crypto key generate rsa general-keys modulus 1024
 login block-for 60 attempts 3 within 60
-user name administrador privilege 15 secret SenhaAdmin
-user name estagiario privilege 1 secret SenhaEst
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
 interface gigabitEthernet 0/1
 ip address 192.168.1.1 255.255.255.224
 description REDE 1
@@ -55,8 +55,8 @@ banner motd "Apenas pessoas Autorizadas"
 ip domain-name rede3.local
 crypto key generate rsa general-keys modulus 1024
 login block-for 60 attempts 3 within 60
-user name administrador privilege 15 secret SenhaAdmin
-user name estagiario privilege 1 secret SenhaEst
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
 interface gigabitEthernet 0/1
 ip address 192.168.0.1 255.255.255.128
 description REDE 1
@@ -99,8 +99,8 @@ banner motd "Apenas pessoas Autorizadas"
 ip domain-name rede4.local
 crypto key generate rsa general-keys modulus 1024
 login block-for 60 attempts 3 within 60
-user name administrador privilege 15 secret SenhaAdmin
-user name estagiario privilege 1 secret SenhaEst
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
 interface gigabitEthernet 0/1
 ip address 172.16.42.1 255.255.254.0
 description REDE 1
@@ -145,8 +145,8 @@ banner motd "Apenas pessoas Autorizadas"
 ip domain-name rede2.local
 crypto key generate rsa general-keys modulus 1024
 login block-for 60 attempts 3 within 60
-user name administrador privilege 15 secret SenhaAdmin
-user name estagiario privilege 1 secret SenhaEst
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
 interface gigabitEthernet 0/1
 ip address 10.40.10.1 255.255.240.0
 description REDE 1
