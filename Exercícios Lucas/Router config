@@ -30,12 +30,12 @@ login block-for 180 attempts 3 within 60
 security passwords min-length 8
 service password-encryption
 exit
-interface serial
+interface serial 0/0/0
 ip address 200.200.100.2 255.255.255.252
 description REDE 2
 no shutdown
 exit
-interface serial
+interface serial 0/1/1
 ip address 200.200.100.6 255.255.255.252
 description REDE 3
 no shutdown
@@ -75,12 +75,12 @@ login block-for 180 attempts 3 within 60
 security passwords min-length 8
 service password-encryption
 exit
-interface serial
+interface serial 0/1/1
 ip address 200.200.100.5 255.255.255.252
 description REDE 2
 no shutdown
 exit
-interface serial
+interface serial 0/1/0
 ip address 200.200.100.10 255.255.255.252
 description REDE 3
 no shutdown
@@ -119,12 +119,12 @@ login block-for 180 attempts 3 within 60
 security passwords min-length 8
 service password-encryption
 exit
-interface serial
+interface serial 0/1/1
 ip address 200.200.100.14 255.255.255.252
 description REDE 2
 no shutdown
 exit
-interface serial
+interface serial 0/1/0
 ip address 200.200.100.9 255.255.255.252
 description REDE 3
 no shutdown
@@ -165,12 +165,12 @@ login block-for 180 attempts 3 within 60
 security passwords min-length 8
 service password-encryption
 exit
-interface serial
+interface serial 0/1/1
 ip address 200.200.100.13 255.255.255.252
 description REDE 2
 no shutdown
 exit
-interface serial
+interface serial 0/0/0
 ip address 200.200.100.1 255.255.255.252
 description REDE 3
 no shutdown
