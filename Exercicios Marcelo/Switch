@@ -1,0 +1,104 @@
+  
+Switch 1
+
+
+
+enable
+configure terminal
+hostname SW-01
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede1.local
+crypto key generate rsa general-keys modulus 1024
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
+ip default-gateway 192.168.1.1
+line console 0
+password SenhadaConsole
+login
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+
+  
+Switch 2
+
+
+
+enable
+configure terminal
+hostname SW-01
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede1.local
+crypto key generate rsa general-keys modulus 1024
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
+ip default-gateway 192.168.1.1
+line console 0
+password SenhadaConsole
+login
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+
+
+  
+Switch 3
+
+
+
+enable
+configure terminal
+hostname SW-01
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede1.local
+crypto key generate rsa general-keys modulus 1024
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
+ip default-gateway 192.168.1.1
+line console 0
+password SenhadaConsole
+login
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+
+  
+Switch 4
+
+
+
+enable
+configure terminal
+hostname SW-01
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede1.local
+crypto key generate rsa general-keys modulus 1024
+username administrador privilege 15 secret SenhaAdmin
+username estagiario privilege 1 secret SenhaEst
+ip default-gateway 192.168.1.1
+line console 0
+password SenhadaConsole
+login
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
