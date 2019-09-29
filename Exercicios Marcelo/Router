@@ -1,0 +1,174 @@
+Router 11
+
+
+
+enable
+configure terminal
+hostname RT-11
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede1.local
+crypto key generate rsa general-keys modulus 1024
+login block-for 240 attempts 7 within 600
+username wanderson privilege 15 secret wanderson15
+interface gigabitEthernet 0/1
+ip address 192.16.1.145 255.255.255.240
+description REDE 1
+no shutdown
+line console 0
+password SenhadaConsole
+login local
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+security passwords min-length 8
+service password-encryption
+exit
+interface g0/0.10
+encapsulation dot1q 10
+ip address 172.16.1.1 255.255.255.128
+description REDE VLAN 10
+exit
+interface g0/0.20
+encapsulation dot1q 20
+ip address 172.16.0.1 255.255.255.0
+description REDE VLAN 20
+exit
+interface g0/0.100
+encapsulation dot1q 100
+ip address 172.16.1.145 255.255.255.240
+description Rede de gerenciamento
+exit
+interface serial
+ip address 200.18.189.5 255.255.255.252
+description REDE 2
+no shutdown
+exit
+interface serial
+ip address 200.18.189.10 255.255.255.252
+description REDE 3
+no shutdown
+do wr
+
+
+Router 21
+
+
+
+enable
+configure terminal
+hostname RT-21
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede2.local
+crypto key generate rsa general-keys modulus 1024
+login block-for 240 attempts 7 within 600
+username wanderson privilege 15 secret wanderson15
+interface gigabitEthernet 0/1
+ip address 172.16.3.1 255.255.255.224
+description REDE 1
+no shutdown
+line console 0
+password SenhadaConsole
+login local
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+security passwords min-length 8
+service password-encryption
+exit
+interface g0/0.10
+encapsulation dot1q 10
+ip address 172.16.2.129 255.255.255.128
+description REDE VLAN 10
+exit
+interface g0/0.20
+encapsulation dot1q 20
+ip address 172.16.2.1 255.255.255.128
+description REDE VLAN 20
+exit
+interface g0/0.100
+encapsulation dot1q 100
+ip address 172.16.3.1 255.255.255.224
+description REDE VLAN 20
+exit
+interface serial
+ip address 200.18.189.2 255.255.255.252
+description REDE 2
+no shutdown
+exit
+interface serial
+ip address 200.18.189.6 255.255.255.252
+description REDE 3
+no shutdown
+do wr
+
+
+Router 31
+
+
+
+enable
+configure terminal
+hostname RT-31
+enable password SenhadaEnable
+banner motd "Apenas pessoas Autorizadas"
+ip domain-name rede3.local
+crypto key generate rsa general-keys modulus 1024
+login block-for 240 attempts 7 within 600
+username wanderson privilege 15 secret wanderson15
+interface gigabitEthernet 0/1
+ip address 192.16.5.1 255.255.255.128
+description REDE 1
+no shutdown
+line console 0
+password SenhadaConsole
+login local
+exit
+line vty 0 15 
+password SenhadaVTY
+transport input ssh 
+exec-timeout 5
+login local
+exit
+security passwords min-length 8
+service password-encryption
+exit
+interface g0/0.10
+encapsulation dot1q 10
+ip address 172.16.4.129 255.255.255.128
+description REDE VLAN 10
+exit
+interface g0/0.20
+encapsulation dot1q 20
+ip address 172.16.4.1 255.255.255.128
+description REDE VLAN 20
+exit
+interface g0/0.100
+encapsulation dot1q 100
+ip address 172.16.5.1 255.255.255.192
+description Rede de gerenciamento
+exit
+interface serial
+ip address 200.18.189.1 255.255.255.252
+description REDE 2
+no shutdown
+exit
+interface serial
+ip address 200.18.189.9 255.255.255.252
+description REDE 3
+no shutdown
+do wr
+
+
+
+
+
