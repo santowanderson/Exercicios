@@ -1,0 +1,297 @@
+Switch rede 1 vlan 10
+
+
+enable
+configure terminal
+hostname SW-11
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret SenhadaEnable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+username wanderson privilege 15 secret wanderson15
+line console 0
+password SenhadaConsole
+login local
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 5
+login local
+exit
+service password-encryption
+vlan 10
+name RH
+exit
+vlan 99
+name nativa
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 10
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 99
+exit
+interface g0/2
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,99
+exit
+interface vlan 99
+ip address 
+description REDE 1 vlan 10
+no shutdown 172.16.1.253 255.255.255.240
+ip default-gateway 172.16.1.145
+do wr
+
+
+Switch rede 1 vlan 20
+
+
+enable
+configure terminal
+hostname SW-12
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret SenhadaEnable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+username wanderson privilege 15 secret wanderson15
+line console 0
+password SenhadaConsole
+login local
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 5
+login local
+exit
+service password-encryption
+vlan 10
+name RH
+exit
+vlan 99
+name nativa
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 10
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 99
+exit
+interface g0/2
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,99
+exit
+interface vlan 99
+ip address 172.16.1.252 255.255.255.240
+description REDE 1 vlan 20
+no shutdown
+ip default-gateway 172.16.1.145
+do wr
+
+
+Switch rede 2 vlan 10
+
+
+enable
+configure terminal
+hostname SW-21
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret SenhadaEnable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+username wanderson privilege 15 secret wanderson15
+line console 0
+password SenhadaConsole
+login local
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 5
+login local
+exit
+service password-encryption
+vlan 10
+name RH
+exit
+vlan 99
+name nativa
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 10
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 99
+exit
+interface g0/2
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,99
+exit
+interface vlan 99
+ip address 172.16.3.253 255.255.255.224
+description REDE 2 vlan 10
+no shutdown
+ip default-gateway 172.16.3.1
+do wr
+
+
+Switch rede 2 vlan 20
+
+
+enable
+configure terminal
+hostname SW-22
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret SenhadaEnable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+username wanderson privilege 15 secret wanderson15
+line console 0
+password SenhadaConsole
+login local
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 5
+login local
+exit
+service password-encryption
+vlan 10
+name RH
+exit
+vlan 99
+name nativa
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 10
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 99
+exit
+interface g0/2
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,99
+exit
+interface vlan 99
+ip address 172.16.3.252 255.255.255.224
+description REDE
+no shutdown
+ip default-gateway 172.16.3.1
+do wr
+
+
+Switch rede 3 vlan 10
+
+
+enable
+configure terminal
+hostname SW-31
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret SenhadaEnable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+username wanderson privilege 15 secret wanderson15
+line console 0
+password SenhadaConsole
+login local
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 5
+login local
+exit
+service password-encryption
+vlan 10
+name RH
+exit
+vlan 99
+name nativa
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 10
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 99
+exit
+interface g0/2
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,99
+exit
+interface vlan 99
+ip address 172.16.5.253 255.255.255.192
+description REDE
+no shutdown
+ip default-gateway 172.16.5.1
+do wr
+
+
+Switch rede 2 vlan 20
+
+
+enable
+configure terminal
+hostname SW-32
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret SenhadaEnable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+username wanderson privilege 15 secret wanderson15
+line console 0
+password SenhadaConsole
+login local
+exit
+line vty 0 15
+password wandersonvty
+transport input ssh
+exec-timeout 5
+login local
+exit
+service password-encryption
+vlan 10
+name RH
+exit
+vlan 99
+name nativa
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 10
+exit
+interface f0/1
+switchport mode access
+switchport access vlan 99
+exit
+interface g0/2
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,99
+exit
+interface vlan 99
+ip address 172.16.5.252 255.255.255.192
+description REDE
+no shutdown
+ip default-gateway 172.16.5.1
+do wr
+
+
+
+
+
