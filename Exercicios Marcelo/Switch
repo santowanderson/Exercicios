@@ -6,7 +6,7 @@ configure terminal
 hostname SW-11
 banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
 enable secret SenhadaEnable
-ip domain-name peachanddaisy.local
+ip domain-name rede1.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
@@ -55,7 +55,7 @@ configure terminal
 hostname SW-12
 banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
 enable secret SenhadaEnable
-ip domain-name peachanddaisy.local
+ip domain-name rede1.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
@@ -104,7 +104,7 @@ configure terminal
 hostname SW-21
 banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
 enable secret SenhadaEnable
-ip domain-name peachanddaisy.local
+ip domain-name rede2.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
@@ -153,7 +153,7 @@ configure terminal
 hostname SW-22
 banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
 enable secret SenhadaEnable
-ip domain-name peachanddaisy.local
+ip domain-name rede2.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
@@ -202,7 +202,7 @@ configure terminal
 hostname SW-31
 banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
 enable secret SenhadaEnable
-ip domain-name peachanddaisy.local
+ip domain-name rede3.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
@@ -251,7 +251,7 @@ configure terminal
 hostname SW-32
 banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
 enable secret SenhadaEnable
-ip domain-name peachanddaisy.local
+ip domain-name rede3.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
