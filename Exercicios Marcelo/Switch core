@@ -4,7 +4,7 @@ enable
 configure terminal 
 hostname SW-CORE-11
 ner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
-domain-name peachanddaisy.local
+domain-name rede1.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
@@ -62,7 +62,7 @@ enable
 configure terminal 
 hostname SW-CORE-21
 ner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
-domain-name peachanddaisy.local
+domain-name rede2.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
@@ -118,7 +118,7 @@ enable
 configure terminal 
 hostname SW-CORE-31
 ner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
-domain-name peachanddaisy.local
+domain-name rede3.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
