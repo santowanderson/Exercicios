@@ -21,10 +21,13 @@ login local
 exit
 service password-encryption
 vlan 10
-name RH
+name rede1
 exit
 vlan 99
 name nativa
+exit
+vlan 100
+name Equipamentos
 exit
 interface f0/1
 switchport mode access
@@ -39,10 +42,10 @@ switchport mode trunk
 switchport trunk native vlan 99
 switchport trunk allowed vlan 10,99
 exit
-interface vlan 99
-ip address 
+interface vlan 100
+ip address 172.16.1.253 255.255.255.240
 description REDE 1 vlan 10
-no shutdown 172.16.1.253 255.255.255.240
+no shutdown 
 ip default-gateway 172.16.1.145
 do wr
 
@@ -69,11 +72,14 @@ exec-timeout 5
 login local
 exit
 service password-encryption
-vlan 10
-name RH
+vlan 20
+name rede1
 exit
 vlan 99
 name nativa
+exit
+vlan 100
+name Equipamentos
 exit
 interface f0/1
 switchport mode access
@@ -119,10 +125,13 @@ login local
 exit
 service password-encryption
 vlan 10
-name RH
+name rede2
 exit
 vlan 99
 name nativa
+exit
+vlan 100
+name Equipamentos
 exit
 interface f0/1
 switchport mode access
@@ -167,11 +176,14 @@ exec-timeout 5
 login local
 exit
 service password-encryption
-vlan 10
-name RH
+vlan 20
+name rede2
 exit
 vlan 99
 name nativa
+exit
+vlan 100
+name Equipamentos
 exit
 interface f0/1
 switchport mode access
@@ -217,10 +229,13 @@ login local
 exit
 service password-encryption
 vlan 10
-name RH
+name rede3
 exit
 vlan 99
 name nativa
+exit
+vlan 100
+name Equipamentos
 exit
 interface f0/1
 switchport mode access
@@ -265,11 +280,14 @@ exec-timeout 5
 login local
 exit
 service password-encryption
-vlan 10
-name RH
+vlan 20
+name rede3
 exit
 vlan 99
 name nativa
+exit
+vlan 100
+name Equipamentos
 exit
 interface f0/1
 switchport mode access
