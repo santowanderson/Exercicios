@@ -84,7 +84,6 @@ name REDE2
 vlan 100
 name Equipamentos
 exit
-interface 
 interface g1/1
 description VLAN 10
 switchport mode access
