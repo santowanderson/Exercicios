@@ -40,7 +40,7 @@ exit
 interface g0/1
 switchport mode trunk
 switchport trunk native vlan 99
-switchport trunk allowed vlan 10,99
+switchport trunk allowed vlan 10,20,99,100
 exit
 interface vlan 100
 ip address 172.16.1.253 255.255.255.240
@@ -92,9 +92,9 @@ exit
 interface g0/1
 switchport mode trunk
 switchport trunk native vlan 99
-switchport trunk allowed vlan 10,99
+switchport trunk allowed vlan 10,20,99,100
 exit
-interface vlan 99
+interface vlan 100
 ip address 172.16.1.252 255.255.255.240
 description REDE 1 vlan 20
 no shutdown
@@ -144,9 +144,9 @@ exit
 interface g0/1
 switchport mode trunk
 switchport trunk native vlan 99
-switchport trunk allowed vlan 10,99
+switchport trunk allowed vlan 10,20,99,100
 exit
-interface vlan 99
+interface vlan 100
 ip address 172.16.3.253 255.255.255.224
 description REDE 2 vlan 10
 no shutdown
@@ -196,9 +196,9 @@ exit
 interface g0/1
 switchport mode trunk
 switchport trunk native vlan 99
-switchport trunk allowed vlan 10,99
+switchport trunk allowed vlan 10,20,99,100
 exit
-interface vlan 99
+interface vlan 100
 ip address 172.16.3.252 255.255.255.224
 description REDE
 no shutdown
@@ -248,9 +248,9 @@ exit
 interface g0/1
 switchport mode trunk
 switchport trunk native vlan 99
-switchport trunk allowed vlan 10,99
+switchport trunk allowed vlan 10,20,99,100
 exit
-interface vlan 99
+interface vlan 100
 ip address 172.16.5.253 255.255.255.192
 description REDE
 no shutdown
@@ -300,9 +300,9 @@ exit
 interface g0/1
 switchport mode trunk
 switchport trunk native vlan 99
-switchport trunk allowed vlan 10,99
+switchport trunk allowed vlan 10,20,99,100
 exit
-interface vlan 99
+interface vlan 100
 ip address 172.16.5.252 255.255.255.192
 description REDE
 no shutdown
