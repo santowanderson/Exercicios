@@ -83,7 +83,6 @@ login local
 exit
 security passwords min-length 8
 service password-encryption
-exit
 interface g0/1.10
 encapsulation dot1q 10
 ip address 172.16.2.129 255.255.255.128
@@ -140,7 +139,6 @@ login local
 exit
 security passwords min-length 8
 service password-encryption
-exit
 interface g0/1.10
 encapsulation dot1q 10
 ip address 172.16.4.129 255.255.255.128
