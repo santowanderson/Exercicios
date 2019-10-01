@@ -24,17 +24,17 @@ name REDE2
 vlan 100
 name Rede de gerenciamento
 exit
-interface fastEthernet 0/1
+interface g1/1
 description VLAN 10
 switchport mode access
 switchport access vlan 10
 exit
-interface fastEthernet 0/2
+interface g2/1
 description VLAN 20
 switchport mode access
 switchport access vlan 20
 exit
-interface fastEthernet 0/24
+interface g3/1
 description VLAN 100
 switchport mode access
 switchport access vlan 100
@@ -82,17 +82,18 @@ name REDE2
 vlan 100
 name Rede de gerenciamento
 exit
-interface fastEthernet 0/1
+interface 
+interface g1/1
 description VLAN 10
 switchport mode access
 switchport access vlan 10
 exit
-interface fastEthernet 0/2
+interface g2/1
 description VLAN 20
 switchport mode access
 switchport access vlan 20
 exit
-interface fastEthernet 0/24
+interface g3/1
 description VLAN 100
 switchport mode access
 switchport access vlan 100
@@ -138,17 +139,17 @@ name REDE2
 vlan 100
 name Rede de gerenciamento
 exit
-interface fastEthernet 0/1
+interface  g1/1
 description VLAN 10
 switchport mode access
 switchport access vlan 10
 exit
-interface fastEthernet 0/2
+interface g2/1
 description VLAN 20
 switchport mode access
 switchport access vlan 20
 exit
-interface fastEthernet 0/24
+interface g3/1
 description VLAN 100
 switchport mode access
 switchport access vlan 100
