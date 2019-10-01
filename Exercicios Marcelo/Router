@@ -28,27 +28,27 @@ exit
 security passwords min-length 8
 service password-encryption
 exit
-interface g0/0.10
+interface g0/1.10
 encapsulation dot1q 10
 ip address 172.16.1.1 255.255.255.128
 description REDE VLAN 10
 exit
-interface g0/0.20
+interface g0/1.20
 encapsulation dot1q 20
 ip address 172.16.0.1 255.255.255.0
 description REDE VLAN 20
 exit
-interface g0/0.100
+interface g0/1.100
 encapsulation dot1q 100
 ip address 172.16.1.145 255.255.255.240
 description Rede de gerenciamento
 exit
-interface serial
+interface serial 0/0/1
 ip address 200.18.189.5 255.255.255.252
 description REDE 2
 no shutdown
 exit
-interface serial
+interface serial 0/0/0
 ip address 200.18.189.10 255.255.255.252
 description REDE 3
 no shutdown
@@ -85,27 +85,27 @@ exit
 security passwords min-length 8
 service password-encryption
 exit
-interface g0/0.10
+interface g0/1.10
 encapsulation dot1q 10
 ip address 172.16.2.129 255.255.255.128
 description REDE VLAN 10
 exit
-interface g0/0.20
+interface g0/1.20
 encapsulation dot1q 20
 ip address 172.16.2.1 255.255.255.128
 description REDE VLAN 20
 exit
-interface g0/0.100
+interface g0/1.100
 encapsulation dot1q 100
 ip address 172.16.3.1 255.255.255.224
 description REDE VLAN 20
 exit
-interface serial
-ip address 200.18.189.2 255.255.255.252
+interface serial 0/0/0
+ip address 200.18.189.10 255.255.255.252
 description REDE 2
 no shutdown
 exit
-interface serial
+interface serial 0/0/1
 ip address 200.18.189.6 255.255.255.252
 description REDE 3
 no shutdown
@@ -142,27 +142,27 @@ exit
 security passwords min-length 8
 service password-encryption
 exit
-interface g0/0.10
+interface g0/1.10
 encapsulation dot1q 10
 ip address 172.16.4.129 255.255.255.128
 description REDE VLAN 10
 exit
-interface g0/0.20
+interface g0/1.20
 encapsulation dot1q 20
 ip address 172.16.4.1 255.255.255.128
 description REDE VLAN 20
 exit
-interface g0/0.100
+interface g0/1.100
 encapsulation dot1q 100
 ip address 172.16.5.1 255.255.255.192
 description Rede de gerenciamento
 exit
-interface serial
+interface serial 0/0/0
 ip address 200.18.189.1 255.255.255.252
 description REDE 2
 no shutdown
 exit
-interface serial
+interface serial 0/0/1
 ip address 200.18.189.9 255.255.255.252
 description REDE 3
 no shutdown
