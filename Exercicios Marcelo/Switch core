@@ -3,8 +3,8 @@ Switch Core 11
 enable
 configure terminal 
 hostname SW-CORE-11
-ner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
-domain-name rede1.local
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+ip domain-name rede1.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
@@ -61,8 +61,8 @@ Switch Core 21
 enable
 configure terminal 
 hostname SW-CORE-21
-ner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
-domain-name rede2.local
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+ip domain-name rede2.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
@@ -118,8 +118,8 @@ Switch Core 31
 enable
 configure terminal 
 hostname SW-CORE-31
-ner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
-domain-name rede3.local
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+ip domain-name rede3.local
 crypto key generate rsa general-keys modulus 1024
 username wanderson privilege 15 secret wanderson15
 line console 0
