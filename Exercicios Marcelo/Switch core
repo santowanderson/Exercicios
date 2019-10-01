@@ -23,7 +23,7 @@ name REDE1
 vlan 20
 name REDE2
 vlan 100
-name Rede de gerenciamento
+name Equipamentos
 exit
 interface g1/1
 description VLAN 10
@@ -82,7 +82,7 @@ name REDE1
 vlan 20
 name REDE2
 vlan 100
-name Rede de gerenciamento
+name Equipamentos
 exit
 interface 
 interface g1/1
@@ -140,7 +140,7 @@ name REDE1
 vlan 20
 name REDE2
 vlan 100
-name Rede de gerenciamento
+name Equipamentos
 exit
 interface  g1/1
 description VLAN 10
