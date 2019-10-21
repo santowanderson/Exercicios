@@ -1,0 +1,86 @@
+                               RT-11
+
+
+enable
+configure terminal
+hostname RT-11
+username wanderson privilege 15 secret wanderson15
+ip domain-name rede1.local
+security passwords min-length 8
+login block-for 240 attempts 7 within 10
+line vty 0 15
+login local
+transport input ssh
+exec-timeout 5
+exit
+line console 0
+password SenhadaConsole
+login
+exit
+service password-encryption
+interface gigabitEthernet 0/1
+no shutdown
+interface gigabitEthernet 0/1.10
+encapsulation dot1q 10
+ip address 172.16.1.1 255.255.255.128
+description VLAN 10
+interface gigabitEthernet 0/1.20
+encapsulation dot1q 20
+ip address 172.16.0.1 255.255.255.0
+description VLAN 20
+interface gigabitEthernet 0/1.100
+encapsulation dot1q 100
+ip address 172.16.1.129 255.255.255.240
+description VLAN 100
+interface serial 0/0/0
+ip address 200.18.189.2 255.255.255.252
+description CONEXÃO COM O RT-21
+no shutdown
+do wr
+
+
+
+
+
+                               RT-21
+
+
+enable
+configure terminal
+hostname RT-21
+username lucasjorge privilege 15 secret batata
+ip domain-name rede1.local
+security passwords min-length 8
+login block-for 240 attempts 7 within 10
+line vty 0 15
+login local
+transport input ssh
+exec-timeout 5
+exit
+line console 0
+login
+exit
+service password-encryption
+interface gigabitEthernet 0/1
+no shutdown
+interface gigabitEthernet 0/1.10
+encapsulation dot1q 10
+ip address 172.16.2.65 255.255.255.192
+description VLAN 10
+interface gigabitEthernet 0/1.20
+encapsulation dot1q 20
+ip address 172.16.2.1 255.255.255.192
+description VLAN 20
+interface gigabitEthernet 0/1.30
+encapsulation dot1q 30
+ip address 172.16.2.129 255.255.255.224
+description VLAN 30
+interface gigabitEthernet 0/1.100
+encapsulation dot1q 100
+ip address 172.16.2.161 255.255.255.224
+description VLAN 100
+interface serial 0/0/0
+ip address 200.18.189.1 255.255.255.252
+description CONEXÃO COM O RT-11
+no shutdown
+do wr

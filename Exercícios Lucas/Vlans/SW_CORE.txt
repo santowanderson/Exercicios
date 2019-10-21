@@ -1,0 +1,100 @@
+                            SW-CORE-11
+
+
+
+
+
+enable
+configure terminal
+hostname SW-CORE-11
+username lucasjorge privilege 15 secret batata
+ip domain-name rede1.local
+line vty 0 15
+login local
+transport input ssh
+exec-timeout 5
+exit
+line console 0
+login
+exit
+service password-encryption
+vlan 100
+name VLAN-100
+vlan 10
+name VLAN-10
+vlan 20
+name VLAN-20
+vlan 30
+name VLAN-30
+interface gigabitEthernet 0/1
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,20,99,100
+interface gigabitEthernet 1/1
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,20,99,100
+description SW-11
+interface gigabitEthernet 2/1
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,20,99,100
+interface vlan 100
+ip address 172.16.1.143 255.255.255.240
+description INTERFACE DE GERENCIAMENTO
+exit
+ip default-gateway 172.16.1.129
+do wr
+
+
+
+
+
+
+
+                            SW-CORE-21
+
+
+
+
+
+enable
+configure terminal
+hostname SW-CORE-21
+username lucasjorge privilege 15 secret batata
+ip domain-name rede1.local
+line vty 0 15
+login local
+transport input ssh
+exec-timeout 5
+exit
+line console 0
+login
+exit
+service password-encryption
+vlan 100
+name VLAN-100
+vlan 10
+name VLAN-10
+vlan 20
+name VLAN-20
+vlan 30
+name VLAN-30
+interface gigabitEthernet 0/1
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,20,30,99,100
+interface gigabitEthernet 1/1
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,20,30,99,100
+interface gigabitEthernet 2/1
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,20,30,99,100
+interface vlan 100
+ip address 172.16.1.142 255.255.255.240
+description INTERFACE DE GERENCIAMENTO
+exit
+ip default-gateway 172.16.2.161
+do wr
