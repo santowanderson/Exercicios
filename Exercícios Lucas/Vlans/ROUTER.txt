@@ -1,86 +1,413 @@
-                               RT-11
+                               enable 
+configure terminal 
+hostname SW-11 
+username wanderson privilegie 15 secret wanderson15 
+crypto key generate rsa general-keys modulus 1024
+ip domain-name rede1.local 
+line vty 0 15 
+login local 
+transport input ssh 
+exec-timeout 5 
+exit 
+line console 0 
+login 
+exit 
+service password-encryption 
+vlan 10 
+name VLAN-10 
+vlan 20
+name VLAN-20  
+vlan 100 
+name VLAN-100 
+interface fastEthernet 0/1 
+switchport mode access 
+switchport access vlan 10 
+interface fastEthernet 0/2 
+switchport mode access 
+switchport access vlan 20 
+interface gigabitEthernet 0/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,99,100 
+interface gigabitEthernet 0/2 
+switchport mode trunk 
+switchport trunk native vlan 9 9 
+switchport trunk allowed vlan 10,20,99,100 
+interface vlan 100 
+ip address 172.16.1.142 255.255.255.240 
+description INTERFACE DE GERENCIAMENTO 
+no shutdown 
+exit 
+ip default-gateway 172.16.1.129 
+do wr 
 
 
-enable
-configure terminal
-hostname RT-11
+
+
+
+							SW-12
+
+enable 
+configure terminal 
+hostname SW-12 
+username wanderson privilegie 15 secret wanderson15 
+crypto key generate rsa general-keys modulus 1024
+ip domain-name rede1.local 
+line vty 0 15 
+login local 
+transport input ssh 
+exec-timeout 5 
+exit 
+line console 0 
+login 
+exit 
+service password-encryption 
+vlan 10 
+name VLAN-10 
+vlan 20
+name VLAN-20 
+vlan 100 
+name VLAN-100 
+interface fastEthernet 0/24
+switchport mode access 
+switchport access vlan 100 
+interface fastEthernet 0/1 
+switchport mode access 
+switchport access vlan 10 
+interface fastEthernet 0/2 
+switchport mode access 
+switchport access vlan 20 
+interface gigabitEthernet 0/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,99,100 
+interface gigabitEthernet 0/2 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,99,100 
+interface vlan 100 
+ip address 172.16.1.141 255.255.255.240 
+description INTERFACE DE GERENCIAMENTO 
+no shutdown 
+exit 
+ip default-gateway 172.16.1.129 
+do wr 
+
+
+							INTER-21
+
+enable 
+configure terminal 
+hostname SW-21 
 username wanderson privilege 15 secret wanderson15
-ip domain-name rede1.local
-security passwords min-length 8
-login block-for 240 attempts 7 within 10
-line vty 0 15
-login local
-transport input ssh
-exec-timeout 5
-exit
-line console 0
-password SenhadaConsole
-login
-exit
-service password-encryption
-interface gigabitEthernet 0/1
-no shutdown
-interface gigabitEthernet 0/1.10
-encapsulation dot1q 10
-ip address 172.16.1.1 255.255.255.128
-description VLAN 10
-interface gigabitEthernet 0/1.20
-encapsulation dot1q 20
-ip address 172.16.0.1 255.255.255.0
-description VLAN 20
-interface gigabitEthernet 0/1.100
-encapsulation dot1q 100
-ip address 172.16.1.129 255.255.255.240
-description VLAN 100
-interface serial 0/0/0
-ip address 200.18.189.2 255.255.255.252
-description CONEXÃO COM O RT-21
-no shutdown
+crypto key generate rsa general-keys modulus 1024
+ip domain-name rede1.local 
+line vty 0 15 
+login local 
+transport input ssh 
+exec-timeout 5 
+exit 
+line console 0 
+login 
+exit 
+service password-encryption 
+vlan 10 
+name VLAN-10 
+vlan 20
+name VLAN-20 
+vlan 30 
+name VLAN-30 
+vlan 100 
+name VLAN-100 
+interface fastEthernet 6/1
+switchport mode access
+interface gigabitEthernet 0/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface gigabitEthernet 2/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface gigabitEthernet 3/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100
+interface gigabitEthernet 1/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface vlan 100 
+ip address 172.16.1.186 255.255.255.224 
+description INTERFACE DE GERENCIAMENTO 
+no shutdown 
+exit 
+ip default-gateway 172.16.2.161 
+do wr 
+
+
+
+
+
+							INTER-22
+
+enable 
+configure terminal 
+hostname SW-21 
+username wanderson privilege 15 secret wanderson15 
+crypto key generate rsa general-keys modulus 1024
+ip domain-name rede1.local 
+line vty 0 15 
+login local 
+transport input ssh 
+exec-timeout 5 
+exit 
+line console 0 
+login 
+exit 
+service password-encryption 
+vlan 10 
+name VLAN-10 
+vlan 20
+name VLAN-20 
+vlan 30 
+name VLAN-30 
+vlan 100 
+name VLAN-100 
+interface fastEthernet 6/1
+switchport mode access
+switchport access vlan 100
+interface gigabitEthernet 0/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface gigabitEthernet 2/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface gigabitEthernet 3/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100
+interface gigabitEthernet 1/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface vlan 100 
+ip address 172.16.1.185 255.255.255.224 
+description INTERFACE DE GERENCIAMENTO 
+no shutdown 
+exit 
+ip default-gateway 172.16.2.161 
+do wr
+
+
+
+							SW-21
+
+enable 
+configure terminal 
+hostname SW-21 
+username wanderson privilege 15 secret wanderson15 
+crypto key generate rsa general-keys modulus 1024
+ip domain-name rede1.local 
+line vty 0 15 
+login local 
+transport input ssh 
+exec-timeout 5 
+exit 
+line console 0 
+login 
+exit 
+service password-encryption 
+vlan 10 
+name VLAN-10 
+vlan 20
+name VLAN-20
+vlan 30
+name VLAN-30   
+vlan 100 
+name VLAN-100 
+interface fastEthernet 0/1 
+switchport mode access 
+switchport access vlan 10 
+interface fastEthernet 0/2 
+switchport mode access 
+switchport access vlan 20 
+interface fastEthernet 0/3 
+switchport mode access 
+switchport access vlan 30 
+interface gigabitEthernet 0/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface gigabitEthernet 0/2 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface vlan 100 
+ip address 172.16.2.190 255.255.255.224 
+description INTERFACE DE GERENCIAMENTO 
+no shutdown 
+exit 
+ip default-gateway 172.16.2.161 
+do wr
+
+
+
+							SW-22
+
+enable 
+configure terminal 
+hostname SW-22 
+username wanderson privilege 15 secret wanderson15 
+crypto key generate rsa general-keys modulus 1024
+ip domain-name rede1.local 
+line vty 0 15 
+login local 
+transport input ssh 
+exec-timeout 5 
+exit 
+line console 0 
+login 
+exit 
+service password-encryption 
+vlan 10 
+name VLAN-10 
+vlan 20
+name VLAN-20
+vlan 30
+name VLAN-30   
+vlan 100 
+name VLAN-100 
+interface fastEthernet 0/1 
+switchport mode access 
+switchport access vlan 10 
+interface fastEthernet 0/2 
+switchport mode access 
+switchport access vlan 20 
+interface fastEthernet 0/3 
+switchport mode access 
+switchport access vlan 30 
+interface gigabitEthernet 0/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface gigabitEthernet 0/2 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface vlan 100 
+ip address 172.16.2.189 255.255.255.224 
+description INTERFACE DE GERENCIAMENTO 
+no shutdown 
+exit 
+ip default-gateway 172.16.2.161 
 do wr
 
 
 
 
 
-                               RT-21
+							SW-23
+
+enable 
+configure terminal 
+hostname SW-23 
+username wanderson privilege 15 secret wanderson15 
+crypto key generate rsa general-keys modulus 1024
+ip domain-name rede1.local 
+line vty 0 15 
+login local 
+transport input ssh 
+exec-timeout 5 
+exit 
+line console 0 
+login 
+exit 
+service password-encryption 
+vlan 10 
+name VLAN-10 
+vlan 20
+name VLAN-20
+vlan 30
+name VLAN-30   
+vlan 100 
+name VLAN-100 
+interface fastEthernet 0/1 
+switchport mode access 
+switchport access vlan 10 
+interface fastEthernet 0/2 
+switchport mode access 
+switchport access vlan 20 
+interface fastEthernet 0/3 
+switchport mode access 
+switchport access vlan 30 
+interface gigabitEthernet 0/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface gigabitEthernet 0/2 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface vlan 100 
+ip address 172.16.2.188 255.255.255.224 
+description INTERFACE DE GERENCIAMENTO 
+no shutdown 
+exit 
+ip default-gateway 172.16.2.161 
+do wr
 
 
-enable
-configure terminal
-hostname RT-21
-username wanderson privilege 15 secret wanderson15
-ip domain-name rede1.local
-security passwords min-length 8
-login block-for 240 attempts 7 within 10
-line vty 0 15
-login local
-transport input ssh
-exec-timeout 5
-exit
-line console 0
-login
-exit
-service password-encryption
-interface gigabitEthernet 0/1
-no shutdown
-interface gigabitEthernet 0/1.10
-encapsulation dot1q 10
-ip address 172.16.2.65 255.255.255.192
-description VLAN 10
-interface gigabitEthernet 0/1.20
-encapsulation dot1q 20
-ip address 172.16.2.1 255.255.255.192
-description VLAN 20
-interface gigabitEthernet 0/1.30
-encapsulation dot1q 30
-ip address 172.16.2.129 255.255.255.224
-description VLAN 30
-interface gigabitEthernet 0/1.100
-encapsulation dot1q 100
-ip address 172.16.2.161 255.255.255.224
-description VLAN 100
-interface serial 0/0/0
-ip address 200.18.189.1 255.255.255.252
-description CONEXÃO COM O RT-11
-no shutdown
+
+
+							SW-24
+
+enable 
+configure terminal 
+hostname SW-24
+username wanderson privilege 15 secret wanderson15 
+crypto key generate rsa general-keys modulus 1024
+ip domain-name rede1.local 
+line vty 0 15 
+login local 
+transport input ssh 
+exec-timeout 5 
+exit 
+line console 0 
+login 
+exit 
+service password-encryption 
+vlan 10 
+name VLAN-10 
+vlan 20
+name VLAN-20
+vlan 30
+name VLAN-30   
+vlan 100 
+name VLAN-100 
+interface fastEthernet 0/1 
+switchport mode access 
+switchport access vlan 10 
+interface fastEthernet 0/2 
+switchport mode access 
+switchport access vlan 20 
+interface fastEthernet 0/3 
+switchport mode access 
+switchport access vlan 30 
+interface gigabitEthernet 0/1 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface gigabitEthernet 0/2 
+switchport mode trunk 
+switchport trunk native vlan 99 
+switchport trunk allowed vlan 10,20,30,99,100 
+interface vlan 100 
+ip address 172.16.2.187 255.255.255.224 
+description INTERFACE DE GERENCIAMENTO 
+no shutdown 
+exit 
+ip default-gateway 172.16.2.161 
 do wr
