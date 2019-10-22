@@ -93,7 +93,7 @@ switchport mode trunk
 switchport trunk native vlan 99
 switchport trunk allowed vlan 10,20,30,99,100
 interface vlan 100
-ip address 172.16.1.142 255.255.255.240
+ip address 172.16.2.190 255.255.255.224
 description INTERFACE DE GERENCIAMENTO
 exit
 ip default-gateway 172.16.2.161
