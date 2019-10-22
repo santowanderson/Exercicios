@@ -48,7 +48,7 @@ do wr
 enable
 configure terminal
 hostname RT-21
-username lucasjorge privilege 15 secret batata
+username wanderson privilege 15 secret wanderson15
 ip domain-name rede1.local
 security passwords min-length 8
 login block-for 240 attempts 7 within 10
