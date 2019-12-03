@@ -53,7 +53,7 @@ switchport mode trunk
 switchport trunk native vlan 28 
 switchport trunk allowed vlan 22,23,24,28,30
 exit
-interface vlan 108
+interface vlan 30
 ip address 192.168.2.126 255.255.255.224
 description INTERFACE DE GERENCIAMENTO
 no shutdown
