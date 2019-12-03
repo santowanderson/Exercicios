@@ -4,7 +4,7 @@ hostname SW-02
 banner motd "ACESSO AUTORIZADO SOMENTE AOS PROFESSORES E INTEGRANTES DA CASA BOLTON"
 enable secret SenhadaEnable
 username Wanderson.Santos privilege 15 secret Wanderson@15
-ip domain-name Grupo8.local
+ip domain-name rede2.local
 crypto key generate rsa general-keys modulus 1024
 line vty 0 15
 login local
@@ -54,9 +54,9 @@ switchport trunk native vlan 29
 switchport trunk allowed vlan 25,26,27,29,31
 exit
 interface vlan 108
-ip address 172.16.31.254 255.255.255.0 
+ip address 172.16.2.126 255.255.255.224
 description INTERFACE DE GERENCIAMENTO
 no shutdown
 exit
-ip default-gateway 172.16.31.1
+ip default-gateway 172.16.2.97
 do wr
