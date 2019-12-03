@@ -31,17 +31,17 @@ exit
 interface fastEthernet 0/1
 switchport mode access
 switchport access vlan 25
-description PC 01
+description PC 04
 exit
 interface fastEthernet 0/2
 switchport mode access
 switchport access vlan 26
-description PC 02
+description PC 05
 exit
 interface fastEthernet 0/3
 switchport mode access
 switchport access vlan 27
-description PC 03
+description PC 06
 exit
 interface fastEthernet 0/24
 switchport mode access
