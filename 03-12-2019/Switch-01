@@ -43,9 +43,14 @@ switchport mode access
 switchport access vlan 24
 description PC 03
 exit
+interface fastEthernet 0/24
+switchport mode access
+switchport access vlan 30
+description SERVIDOR
+exit
 interface g0/1
 switchport mode trunk
-switchport trunk native vlan 28
+switchport trunk native vlan 28 
 switchport trunk allowed vlan 22,23,24,28,30
 exit
 interface vlan 108
