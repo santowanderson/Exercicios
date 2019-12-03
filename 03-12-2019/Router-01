@@ -21,12 +21,6 @@ service password-encryption
 interface g0/1
 no shutdown
 exit
-interface g0/1.17
-encapsulation dot1q 17
-ip address 192.168.17.1 255.255.255.0
-description SUBINTERFACE VLAN 17
-ip helper-address  192.168.248.5
-exit
 interface g0/1.22
 encapsulation dot1q 22
 ip address 192.168.2.1 255.255.255.224
@@ -41,7 +35,7 @@ ip helper-address 192.168.2.101
 exit
 interface gigabitEthernet 0/1.24
 encapsulation dot1q 24
-ip address 192.168.2.74 255.255.255.224
+ip address 192.168.2.65 255.255.255.224
 description VLAN 108 CONEXAO COM SW-CORE
 ip helper-address 192.168.2.101
 exit
