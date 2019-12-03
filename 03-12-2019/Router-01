@@ -1,0 +1,53 @@
+enable
+configure terminal
+hostname RT-01
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS"
+enable secret SenhadaEnable
+ip domain-name sprint3.local
+crypto key generate rsa general-keys modulus 1024
+username Wanderson.Santos privilege 15 secret Wanderson@15
+line console 0
+password SenhadaConsole
+login
+exit
+line vty 0 15
+transport input ssh
+exec-timeout 5
+login local
+exit
+login block-for 240 attempts 7 within 600
+security passwords min-length 8
+service password-encryption
+interface g0/1
+no shutdown
+exit
+interface g0/1.17
+encapsulation dot1q 17
+ip address 192.168.17.1 255.255.255.0
+description SUBINTERFACE VLAN 17
+ip helper-address  192.168.248.5
+exit
+interface g0/1.22
+encapsulation dot1q 22
+ip address 192.168.2.1 255.255.255.224
+description SUBINTERFACE VLAN 22
+ip helper-address  192.168.2.101
+exit
+interface gigabitEthernet 0/1.23
+encapsulation dot1q 23
+ip address 192.168.2.33 255.255.255.224
+description VLAN18 CONEXAO COM SW-CORE
+ip helper-address 192.168.2.101
+exit
+interface gigabitEthernet 0/1.24
+encapsulation dot1q 24
+ip address 192.168.2.74 255.255.255.224
+description VLAN 108 CONEXAO COM SW-CORE
+ip helper-address 192.168.2.101
+exit
+interface gigabitEthernet 0/1.28
+encapsulation dot1q 28
+ip address 192.168.2.97 255.255.255.224
+description VLAN 108 CONEXAO COM SW-CORE
+ip helper-address 192.168.2.101
+do wr
