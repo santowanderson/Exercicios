@@ -39,8 +39,8 @@ ip address 192.168.2.65 255.255.255.224
 description VLAN 108 CONEXAO COM SW-CORE
 ip helper-address 192.168.2.101
 exit
-interface gigabitEthernet 0/1.28
-encapsulation dot1q 28
+interface gigabitEthernet 0/1.30
+encapsulation dot1q 30
 ip address 192.168.2.97 255.255.255.224
 description VLAN 108 CONEXAO COM SW-CORE
 ip helper-address 192.168.2.101
