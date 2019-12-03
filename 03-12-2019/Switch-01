@@ -45,7 +45,7 @@ description PC 03
 exit
 interface g0/1
 switchport mode trunk
-switchport trunk native vlan 
+switchport trunk native vlan 28
 switchport trunk allowed vlan 22,23,24,28,30
 exit
 interface vlan 108
