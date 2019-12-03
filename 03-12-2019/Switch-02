@@ -1,0 +1,57 @@
+enable
+configure terminal
+hostname SW-02
+banner motd "ACESSO AUTORIZADO SOMENTE AOS PROFESSORES E INTEGRANTES DA CASA BOLTON"
+enable secret SenhadaEnable
+username Wanderson.Santos privilege 15 secret Wanderson@15
+ip domain-name Grupo8.local
+crypto key generate rsa general-keys modulus 1024
+line vty 0 15
+login local
+transport input ssh
+exec-timeout 5
+exit
+line console 0
+password SenhadaConsole
+login
+exit
+service password-encryption
+vlan 25
+name VLAN_25
+exit
+vlan 26
+name VLAN_26
+exit
+vlan 27
+name VLAN_27
+exit
+vlan 30
+name GERENCIAMENTO
+exit
+interface fastEthernet 0/1
+switchport mode access
+switchport access vlan 25
+description PC 01
+exit
+interface fastEthernet 0/2
+switchport mode access
+switchport access vlan 26
+description PC 02
+exit
+interface fastEthernet 0/3
+switchport mode access
+switchport access vlan 27
+description PC 03
+exit
+interface g0/1
+switchport mode trunk
+switchport trunk native vlan 
+switchport trunk allowed vlan 22,23,24,28,30
+exit
+interface vlan 108
+ip address 192.168.31.254 255.255.255.0 
+description INTERFACE DE GERENCIAMENTO
+no shutdown
+exit
+ip default-gateway 192.168.31.1
+do wr
