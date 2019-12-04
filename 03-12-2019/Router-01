@@ -44,4 +44,13 @@ encapsulation dot1q 30
 ip address 192.168.2.97 255.255.255.224
 description VLAN 108 CONEXAO COM SW-CORE
 ip helper-address 192.168.2.101
+exit
+interface serial 0/0/0
+ip address 200.187.31.101 255.255.255.252
+no shutdown
+exit
+ip route 172.16.2.0 255.255.255.224 200.187.31.102
+ip route 172.16.2.32 255.255.255.224 200.187.31.102
+ip route 172.16.2.64 255.255.255.224 200.187.31.102
+ip route 172.16.2.96 255.255.255.224 200.187.31.102
 do wr
