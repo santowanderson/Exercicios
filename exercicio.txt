@@ -1,0 +1,26 @@
+12	Neste exercício o preoblema era decorrente ao IP de DNS errado no pc-1, ao colocar o ip correto foi possiver o acesso ao site
+
+13	Neste exercício o problema era que no RT-1 o ip route para o RT-3 estava errado, ao ajustar foi possivel o acesso ao site
+
+14	O problema aqui era que o servidor wed nao estava configurado o default gateway, após sua configuração o problema foi resolvido
+
+15	O problema que temos aqui era decorrente ao endereço IP errado do nosso servidor de DNS, para reseloção do problema basta apenas
+ auterar para o correto
+ 
+ 16	para resolução deste problema e nescessário entrar na interface g0/0 do RT-3 de desabilitar a opção de "ip access-group HTTP out" para que
+ o serviço de HTTP funciene e consiga acessar o site
+ 
+ 17 para resolução deste problema e nescessário retirar a função de "ip access-list extended DNS" no RT-2 para que o DNS possa funcionar corretamente
+ 
+ 18
+ 
+ 21	neste problema a resolução é ligar o escopo de serviço de DNS no servidor, pois se encontrava desligado
+ 
+ 22 o nao acesso ao site é decorrende a um erro de na url do site que estava digitada incorretamente no servidor DNS
+ 
+ 23	neste caso o problema estava no servidor web onde a aplicação de HTTP estava desligada, ao liga-la o problema estará resolvido
+ 
+ 24	o  problema neste exercício era que o ip do servidor web estava errado no escopo de DNS, por isso o não acesso ao site
+ 
+ 25	A resolução esta no arquivo inicial do site o "index.html" que estava errado (index.html.css era como estava o arquivo, sendo essa forma errada), por
+ isso o nao acesso ao site
