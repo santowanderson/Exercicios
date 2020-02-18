@@ -1,0 +1,126 @@
+R1
+
+en
+conf t
+hostname R1
+enable secret class
+line vty 0 15 
+password cisco
+no ip domain lookup
+line console 0
+logging synchronous
+exit
+int g0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+int s0/0/0
+ip address 192168.12.1 255.255.255.252
+clock rate  128000
+bandwidth 128
+no shutdown
+exit
+int s0/0/1
+ip address 192.168.13.1 255.255.255.252
+clock rate  128000
+bandwidth 128
+ip ospf cost 1565
+no shutdown
+exit
+route ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+network 192.168.12.0 0.0.0.3 area 0
+network 192.168.13.0 0.0.0.3 area 0
+exit
+interface lo0 
+ip address 1.1.1.1 255.255.255.255 
+exit
+router ospf 1
+router-id 11.11.11.11
+passive-interface g0/0 
+auto-cost reference-bandwidth 100
+running-config startup-config 
+
+
+
+R2
+
+
+
+en
+conf t
+hostname R2
+enable secret class
+line vty 0 15 
+password cisco
+no ip domain lookup
+line console 0
+logging synchronous
+exit
+int g0/0
+ip address 192.168.2.1 255.255.255.0
+no shutdown
+exit
+int s0/0/0 
+ip address 192.168.12.2 255.255.255.252
+no shutdown
+exit
+int s0/0/1 
+ip address 192.168.23.1 255.255.255.252
+no shutdown
+exit
+route ospf 1
+network 192.168.2.1 0.0.0.255 area 0
+network 192.168.23.1 0.0.0.3 area 0
+network 192.168.12.2 0.0.0.3 area 0
+exit
+interface lo0
+ip address 2.2.2.2 255.255.255.255
+exit
+router ospf 1
+router-id 22.22.22.22
+no passive-interface s0/0/0 
+no passive-interface s0/0/1
+auto-cost reference-bandwidth 100
+running-config startup-config 
+
+R3
+
+
+en
+conf t
+hostname R3
+enable secret class
+line vty 0 15 
+password cisco
+no ip domain lookup
+line console 0
+logging synchronous
+exit
+int g0/0
+ip address 192.168.3.1 255.255.255.0
+no shutdown
+exit
+int s0/0/0
+ip address 192.168.13.2 255.255.255.252
+no shutdown
+exit
+int s0/0/1
+ip address 192.168.23.2 255.255.255.252
+no shutdown
+exit
+route ospf 1
+network 192.168.3.1 0.0.0.255 area 0
+network 192.168.23.2 0.0.0.3 area 0
+network 192.168.13.2 0.0.0.3 area 0
+exit
+interface lo0 
+ip address 3.3.3.3 255.255.255.255
+exit
+router ospf 1
+router-id 33.33.33.33
+auto-cost reference-bandwidth 100
+running-config startup-config 
+
+
+
