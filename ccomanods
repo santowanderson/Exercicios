@@ -1,9 +1,0 @@
-
-show run interface - Mostra configurações da Interface
-show process cpu sorted - Mostra uso da cpu do maior para menor
-show log =  Mostra logs / | i + data = Mostra apenas log da data referente
-show mac address-table interface + int - Mostra mac adrress da porta
-show mac ad ad +mac - Mostra em qual interface o mac está
-show vlan id 17 - Visualiza em qual porta a vlan está
-
-macvendors - site usado para ver fabricante de dispositivos com mac
