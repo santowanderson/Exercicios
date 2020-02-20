@@ -1,0 +1,142 @@
+SW-1
+
+en
+conf t
+vlan 5
+vlan 10
+vlan 20
+vlan 30	
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 5,10,20,30,40,50,60,70,99
+switchport trunk native vlan 99
+exit
+int f0/1
+switchport mode access
+switchport access vlan 5
+exit
+int f0/2
+switchport mode access
+switchport access vlan 10
+exit
+int f0/3
+switchport mode access
+switchport access vlan 20
+exit
+int f0/4
+switchport mode access
+switchport access vlan 30
+exit
+
+
+R1
+
+
+en
+conf t
+int g0/0
+no shutdown
+exit
+int g0/0.5
+encapsulation dot1q 5
+ip address 192.168.0.1 255.255.255.0
+exit
+int g0/0.10
+encapsulation dot1q 10
+ip address 192.168.1.1 255.255.255.0
+exit
+int g0/0.20
+encapsulation dot1q 20
+ip address 192.168.2.1 255.255.255.0
+exit
+int g0/0.30
+encapsulation dot1q 30
+ip address 192.168.3.1 255.255.255.0
+exit
+int s0/0/0
+ip address 200.0.0.1 255.255.255.252
+no shutdown
+
+
+
+R2
+
+
+en
+conf t
+hostname RT-2
+int g0/0
+no shutdown
+exit
+int g0/0.40
+encapsulation dot1q 40
+ip address 192.168.4.1 255.255.255.0
+exit
+int g0/0.50
+encapsulation dot1q 50
+ip address 192.168.5.1 255.255.255.0
+exit
+int g0/0.60
+encapsulation dot1q 60
+ip address 192.168.6.1 255.255.255.0
+exit
+int g0/0.70
+encapsulation dot1q 70
+ip address 192.168.7.1 255.255.255.0
+exit
+int g0/1
+ip address 200.0.0.2 255.255.255.252
+no shutdown
+exit
+router rip
+version 2
+no auto-summary
+passive-interface default
+no passive-interface g0/1
+network 192.168.4.0
+network 192.168.5.0
+network 192.168.6.0
+network 192.168.7.0
+redistribute ospf 1 metric 1
+exit
+router bgp 65001
+neighbor 200.0.0.1 remote-as 65000
+network 192.168.4.0 mask 255.255.255.0
+network 192.168.5.0 mask 255.255.255.0
+network 192.168.6.0 mask 255.255.255.0
+network 192.168.7.0 mask 255.255.255.0
+network 200.0.0.0 mask 255.255.255.252
+
+
+
+SW-2
+
+en
+conf t
+hostname SW-2
+vlan 40
+vlan 50
+vlan 60
+vlan 70	
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 5,10,20,30,40,50,60,70,99
+switchport trunk native vlan 99
+exit
+int f0/1
+switchport mode access
+switchport access vlan 40
+exit
+int f0/2
+switchport mode access
+switchport access vlan 50
+exit
+int f0/3
+switchport mode access
+switchport access vlan 60
+exit
+int f0/4
+switchport mode access
+switchport access vlan 70
+exit
+
