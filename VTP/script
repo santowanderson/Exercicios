@@ -1,0 +1,56 @@
+					Config de VTP
+
+en
+conf t
+vlan 10
+name Clientes
+vlan 20
+name Servidores
+vlan 30
+name DMZ
+vlan 40
+name Vendas
+vlan 50
+name Diretoria
+vlan 99
+name Gerenciamento
+exit
+vtp mode server
+vtp domain vtp
+vtp password wanderson15
+int f0/1
+switchport mode access
+switchpor access vlan 10
+exit
+int f0/24
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30,40,50,99
+
+
+en
+conf t
+vtp mode client
+vtp domain vtp
+vtp password wanderson15
+int f0/1
+switchport mode access
+switchport access vlan 10
+exit
+int f0/24
+switchpor mode trunk
+switchport trunk allowed vlan 10,20,30,40,50,99
+
+
+
+en
+conf t
+vtp mode client
+vtp domain vtp
+vtp password wanderson15
+int f0/1
+switchport mode access
+switchport access vlan 10
+exit
+int f0/23
+switchpor mode trunk
+switchport trunk allowed vlan 10,20,30,40,50,99
