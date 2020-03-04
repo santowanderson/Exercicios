@@ -33,8 +33,8 @@ int f0/2
 switchport mode access
 exit
 int range f0/1-2
-switchport port-security
-switchport port-security maximum 2
-switchport port-security mac-address sticky
+switchport port-security <------------------- ativa o port-security
+switchport port-security maximum 2 <----------------- especifíca o máximo de mac-address que uma interface pode aprender
+switchport port-security mac-address sticky <-------------- faz a interface aprender o mac-address do host
 switchport port-security violation shutdown <-------------- desabilita as porta quando hà alguma violação
 
