@@ -1,0 +1,35 @@
+int range f0/2-5
+channel-group 1 mode auto
+
+
+
+
+en
+conf t
+int range f0/6-9
+channel-group 2 mode active
+
+
+
+en
+conf t
+int range f0/6-9
+channel-group 2 mode passive
+
+
+
+
+
+
+
+en
+conf t
+int range f0/10-13
+channel-group 3 mode on
+
+
+
+en
+conf t
+int range f0/10-13
+channel-group 3 mode on
